@@ -3,18 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You Are An Idiot</title>
+    <title>Enter at Your Own Risk</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding-top: 200px;
+            margin: 0;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
     <script>
+        function showYouAreAnIdiotPage() {
+            document.getElementById('warningPage').classList.add('hidden');
+            document.getElementById('youAreAnIdiotPage').classList.remove('hidden');
+            openWindow();
+        }
+
         function openWindow() {
             var newWindow = window.open('', '_blank', 'width=200,height=100');
             newWindow.document.write('<html><head><title>You Are An Idiot</title></head><body style="background-color: black; color: white; font-size: 16px; text-align: center; padding-top: 40px;">You Are An Idiot</body></html>');
             setTimeout(openWindow, 1000); // Adjust the delay as needed
         }
-
-        window.onload = openWindow;
     </script>
 </head>
 <body>
-    <h1>Welcome to the Virus Page!</h1>
+    <div id="warningPage">
+        <p>Enter at your own risk</p>
+        <a href="#" onclick="showYouAreAnIdiotPage(); return false;">Click here to proceed</a>
+    </div>
+    <div id="youAreAnIdiotPage" class="hidden">
+        <h1>Welcome to the Virus Page!</h1>
+    </div>
 </body>
 </html>
